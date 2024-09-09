@@ -83,12 +83,12 @@ bool isUniqueNIP(Direktur direktur[], String NIP)
 
 void tampilData(Direktur direktur[])
 {
-	int i;
+	int i, banyak_direktur=1;
 	
 	for(i=0; i<maxDirektur; i++)
-		if(strcmpi(direktur[i].nama,"-")!=0) //kalau tidak kosong akan di outputkan
+		if(strcmpi(direktur[i].nama,"-")!=0 && strcmpi(direktur[i].nama,"")!=0) //kalau tidak kosong akan di outputkan
 		{
-			printf("\n\n\t\t===++ Data Direktur ke-%d ++===", i+1);
+			printf("\n\n\t\t===++ Data Direktur ke-%d ++===", banyak_direktur++);
 			printf("\n\tNama Direktur\t\t: %s", direktur[i].nama);
 			printf("\n\tNIP Direktur\t\t: %s", direktur[i].NIP);
 			
@@ -131,7 +131,7 @@ void sortDirektur(Direktur direktur[])
 	{
 		for(j=i+1; j<maxDirektur; j++)
 		{
-			if(direktur[i].levelMinimarket < direktur[j].levelMinimarket) // sorting level dulu
+			if((direktur[i].levelMinimarket < direktur[j].levelMinimarket) && strcmpi(direktur[j].nama,"-")!=0) // sorting level dulu
 			{
 				temp = direktur[i];
 				direktur[i] = direktur[j];
@@ -139,7 +139,7 @@ void sortDirektur(Direktur direktur[])
 			}
 			else if(direktur[i].levelMinimarket == direktur[j].levelMinimarket) // kalau level sama terus nama
 			{
-				if(strcmpi(direktur[i].nama,direktur[j].nama)>0)
+				if(strcmpi(direktur[i].nama,direktur[j].nama)>0 && strcmpi(direktur[j].nama,"-")!=0)
 				{
 					temp = direktur[i];
 					direktur[i] = direktur[j];

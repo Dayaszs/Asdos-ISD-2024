@@ -211,7 +211,6 @@ int main(int argc, char *argv[]) {
 								{
 									if(isFullKaryawan(daftarDirektur, indexDirektur2)){ // cek yang dimasukkin kalau sudah punya atau belum
 										printf("\n\n\t[!] Direktur ini sudah memiliki dua Karyawan");
-										printf("\n\n\t%d",isFullKaryawan(daftarDirektur, indexDirektur2));
 									}
 									else
 									{
