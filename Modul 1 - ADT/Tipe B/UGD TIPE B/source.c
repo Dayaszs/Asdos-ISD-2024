@@ -88,12 +88,12 @@ bool isUniqueNIP(Direktur direktur[], String NIP)
 
 void tampilData(Direktur direktur[])
 {
-	int i;
+	int i, jumlahPelatih=1;
 	
 	for(i=0; i<maxDirektur; i++)
 		if(strcmpi(direktur[i].nama,"-")!=0) //kalau tidak kosong akan di outputkan
 		{
-			printf("\n\n\t\t===++ Data Pelatih ke-%d ++===", i+1);
+			printf("\n\n\t\t===++ Data Pelatih ke-%d ++===", jumlahPelatih++);
 			printf("\n\tNama Pelatih\t\t: %s", direktur[i].nama);
 			printf("\n\tNIP Pelatih\t\t: %s", direktur[i].NIP);
 			
